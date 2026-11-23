@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Class 9 Study Reminder</title>
+</head>
+<body>
+<h1>📚 ICSE Class 9 Study Reminder</h1>
+<h2>Daily Study Timetable</h2>
+<p>08:00 AM - Maths</p>
+<p>10:00 AM - Physics</p>
+<p>04:00 PM - Chemistry</p>
+<p>06:00 PM - Biology</p>
+<button onclick="notifyMe()">Enable Notifications</button>
+<script>
+function notifyMe() {
+  if (!("Notification" in window)) {
+    alert("Notifications supported nahi hain");
+    return;
+  }
+  Notification.requestPermission().then(permission => {
+    if (permission === "granted") {
+      new Notification("Study Time!", {
+        body: "Aaj ki Maths preparation shuru karo!"
+      });
+    }
+  });
+}
+</script>
+</body>
+</html>
